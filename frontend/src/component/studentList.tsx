@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react"; 
-
+import { Link } from "react-router-dom";
 interface studentData{
     id:string,
     name:string
@@ -13,7 +13,7 @@ export const StudentList= ()=>{
     useEffect(()=>{
        async function fetchStudents() {
         try{
-            const res=await axios.get("http://localhost:3000/api/user")
+            const res=await axios.get("http://localhost:3000/api/student")
             const data=res.data;
             setStudents(data);
         }catch(e){
@@ -26,7 +26,14 @@ export const StudentList= ()=>{
 
     return (
         <div>
-        {students.map(student=> <h1 key={student.id}>{student.name}</h1>)}
-            </div>
+            {students.map(student=> 
+                <h1 key={student.id}>
+                    <Link 
+                        to={`/student/${student.id}`}
+                        className="block text-lg font-medium text-blue-600 hover:text-blue-800 transition">
+                            {student.name}
+                    </Link>
+                </h1>)}
+        </div>
     )
 }
