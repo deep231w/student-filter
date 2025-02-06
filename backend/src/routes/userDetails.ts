@@ -1,6 +1,5 @@
 import express ,{Response, Request} from "express";
 import prisma from "../db/db";
-import { error } from "console";
 const router=express.Router();
 
 router.get("/user", async(req:Request, res:Response)=>{
