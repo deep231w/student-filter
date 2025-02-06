@@ -1,12 +1,13 @@
 import express,{Response,Request } from "express";
-import userDetails from "../src/routes/userDetails"
+import userDetails from "./routes/userDetails"
+import dotenv from "dotenv";
 
-
+dotenv.config();
 const app=express();
 
 app.use(express.json());
 
-app.get("/",userDetails );
+app.use("/api",userDetails );
 
 
 app.listen(3000, ()=>{
