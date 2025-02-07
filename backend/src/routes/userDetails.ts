@@ -2,10 +2,21 @@ import express ,{Response, Request} from "express";
 import prisma from "../db/db";
 const router=express.Router();
 
+
+  
 router.get("/student", async(req:Request, res:Response)=>{
     console.log("inside route");
+
+    const {rollno, school, village} =req.query as Record<string, string |undefined>
     try{
         const users= await prisma.user.findMany({
+            where:{
+                AND:[
+                    rollno? {rollno: rollno} :{},
+                    school? {school: school} : {},
+                    village? {village: village}:{}
+                ]
+            },
             select:{
                 id:true,
                 name:true,
@@ -25,10 +36,14 @@ router.get("/student", async(req:Request, res:Response)=>{
 })
 router.get("/student/:id",async(req:Request, res:Response)=>{
     const {id}=req.params;
+    if(!id){
+        res.status(400).send("student not found");
+    }
+
     try{
         const response= await prisma.user.findFirst({
             where:{
-                id:Number(id)
+                id:parseInt(id)
             }
         })
         res.status(200).json(response);
