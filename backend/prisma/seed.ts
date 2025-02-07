@@ -1,7 +1,8 @@
 import {PrismaClient} from "@prisma/client";
 import dotenv from "dotenv";
 
-dotenv.config();
+
+dotenv.config({path:"../.env"});
 const prisma= new PrismaClient();
 
 async function main(){
@@ -9,39 +10,59 @@ async function main(){
 await prisma.user.createMany({
     data:[
         {
-            name:"deepak",
-            school:"Saraswati sisu vidyamandir",
+            name:"Deepak Maharana",
+            school:"saraswati sisu vidyamandir",
             rollno:"1",
             village:"kuhudi"
         },{
-            name:"raju",
+            name:"Raju Sarkar",
             school:"swami vivekananda school ",
             rollno:"1",
             village:"balugaon"
         },{
-            name:"sanju",
+            name:"Sanju Behera",
             school:"janata high school",
             rollno:"2",
             village:"kuhudi"
         },{
-            name:"smruti",
+            name:"Smruti Jena",
             school:"saraswati sisu vidyamandir",
             rollno:"2",
             village:"kuhudi"
         },{
-            name:"sumeet",
+            name:"Sumeet Maharana",
             school:"swami vivekananda school",
             rollno:"2",
             village:"tangi"
         },{
-            name:"rajesh",
+            name:"Rajesh Nayak",
             school:"janata high school",
             rollno:"3",
-            village:"tangi"
+            village:"kuhudi"
         },{
-            name:"rama",
+            name:"Rama Barik",
             school:"janata high school",
             rollno:"4",
+            village:"balugaon"
+        },{
+            name:"Biswa Barik",
+            school:"janata high school",
+            rollno:"5",
+            village:"tangi"
+        },{
+            name:"Samir Sahoo",
+            school:"saraswati sisu vidyamandir",
+            rollno:"3",
+            village:"balugaon"
+        },{
+            name:"Rama Barik",
+            school:"swami vivekananda school",
+            rollno:"5",
+            village:"tangi"
+        },{
+            name:"Rama Barik",
+            school:"janata high school",
+            rollno:"6",
             village:"tangi"
         }
     ]
