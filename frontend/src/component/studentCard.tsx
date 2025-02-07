@@ -7,7 +7,8 @@ interface studentData{
     name:string,
     school:string,
     rollno:string,
-    village:string
+    village:string,
+    fathersName:string
 }
 
 export const StudentCard= ()=>{
@@ -33,8 +34,7 @@ export const StudentCard= ()=>{
                 <p className="text-blue-600"><strong className="text-gray-800">School : </strong>{studentCard?.school}</p>
                 <p className="text-blue-600"><strong className="text-gray-800">Roll Number :</strong>{studentCard?.rollno}</p>
                 <p className="text-blue-600"><strong className="text-gray-800">Village : </strong>{studentCard?.village}</p>
-                <p className="text-blue-600"><strong className="text-gray-800">Father's Name : </strong></p>
-                <p className="text-blue-600"><strong className="text-gray-800">Mothers Name : </strong></p>
+                <p className="text-blue-600"><strong className="text-gray-800">Father's Name : </strong>{studentCard?.fathersName}</p>
             </div>
         </div>
     )

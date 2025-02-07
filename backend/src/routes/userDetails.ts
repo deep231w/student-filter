@@ -22,7 +22,8 @@ router.get("/student", async(req:Request, res:Response)=>{
                 name:true,
                 school:true,
                 rollno:true,
-                village:true
+                village:true,
+                fathersName:true
             }
         })
         res.status(200).json(users);

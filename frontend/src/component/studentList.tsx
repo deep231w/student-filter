@@ -23,7 +23,6 @@ export const StudentList= ({filter}:props)=>{
     useEffect(()=>{
        async function fetchStudents() {
         try{
-            //const querySearch= new URLSearchParams(filter).toString();
             const res=await axios.get(`http://localhost:3000/api/student`)
             const data=res.data;
             setStudents(data);

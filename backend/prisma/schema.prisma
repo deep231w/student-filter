@@ -8,10 +8,11 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @unique @default(autoincrement())
-  name      String
-  school    String
-  rollno    String
-  village   String
-  createdAt DateTime @default(now())
+  id          Int      @id @unique @default(autoincrement())
+  name        String
+  school      String
+  rollno      String
+  village     String
+  fathersName String
+  createdAt   DateTime @default(now())
 }

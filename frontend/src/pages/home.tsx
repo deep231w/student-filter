@@ -17,6 +17,7 @@ export const Home= ()=>{
         setStudentFilter(prev=>({
             ...prev, [key]:value
         }))
+        setDropdown(null);
     }
 
     return (
