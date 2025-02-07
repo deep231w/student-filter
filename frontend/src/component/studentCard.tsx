@@ -27,11 +27,15 @@ export const StudentCard= ()=>{
         fetchCard();
     },[id]);
     return(
-        <div>
-            <h1>{studentCard?.name}</h1>
-            <p>{studentCard?.school}</p>
-            <p>{studentCard?.rollno}</p>
-            <p>{studentCard?.village}</p>
+        <div className="flex flex-col items-center justify-center h-screen ">
+            <div className="flex flex-col items-left text-2xl">
+                <h1 className="text-blue-600"><strong className="text-gray-800">Name : </strong>{studentCard?.name}</h1>
+                <p className="text-blue-600"><strong className="text-gray-800">School : </strong>{studentCard?.school}</p>
+                <p className="text-blue-600"><strong className="text-gray-800">Roll Number :</strong>{studentCard?.rollno}</p>
+                <p className="text-blue-600"><strong className="text-gray-800">Village : </strong>{studentCard?.village}</p>
+                <p className="text-blue-600"><strong className="text-gray-800">Father's Name : </strong></p>
+                <p className="text-blue-600"><strong className="text-gray-800">Mothers Name : </strong></p>
+            </div>
         </div>
     )
 }
