@@ -3,6 +3,11 @@ import { useStudentCard } from "../hook/useStudentDetails"
 
 export const StudentCard= ()=>{
     const {student, loading,error} =useStudentCard();
+    
+    if(loading) return <p>Loading ...</p>
+    if(error) return <p>Server Error</p>
+    if(!student) return <p>Student not found</p>
+    
     return(
         <div className="flex flex-col items-center justify-center h-screen ">
             <div className="flex flex-col items-left text-2xl">
