@@ -64,13 +64,13 @@ await prisma.user.createMany({
             village:"balugaon",
             fathersName:"Gudu "
         },{
-            name:"Rama Barik",
+            name:"Siba Sahoo",
             school:"swami vivekananda school",
             rollno:"5",
-            village:"tangi",
+            village:"kuhudi",
             fathersName:"Manas"
         },{
-            name:"Rama Barik",
+            name:"Bikash Dash",
             school:"janata high school",
             rollno:"6",
             village:"tangi",
