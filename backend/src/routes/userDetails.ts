@@ -7,16 +7,9 @@ const router=express.Router();
 router.get("/student", async(req:Request, res:Response)=>{
     console.log("inside route");
 
-    const {rollno, school, village} =req.query as Record<string, string |undefined>
     try{
         const users= await prisma.user.findMany({
-            where:{
-                AND:[
-                    rollno? {rollno: rollno} :{},
-                    school? {school: school} : {},
-                    village? {village: village}:{}
-                ]
-            },
+            
             select:{
                 id:true,
                 name:true,
